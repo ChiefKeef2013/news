@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости КРЭТ — Корпоративный портал</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <svg style="display: none;">
+        <defs>
+            <symbol id="icon-search" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+            </symbol>
+
+            <symbol id="icon-trophy" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z" />
+            </symbol>
+
+            <symbol id="icon-soccer" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 3.3l1.35-.95c1.82.56 3.37 1.76 4.38 3.34l-.39 1.34-1.35.46L13 6.7V5.3zm-3.35-.95L11 5.3v1.4L7.01 9.49l-1.35-.46-.39-1.34c1.01-1.58 2.56-2.78 4.38-3.34zM7.08 17.11l-1.14.1A7.938 7.938 0 0 1 4 12c0-.12.01-.23.02-.35l1-.73 1.38.48 1.46 4.34-.78 1.37zm7.42 2.48c-.79.26-1.63.41-2.5.41s-1.71-.15-2.5-.41l-.69-1.49.64-1.1h5.11l.64 1.11-.7 1.48zM14.27 15H9.73l-1.35-4.02L12 8.44l3.63 2.54L14.27 15zm3.79 2.21l-1.14-.1-.79-1.37 1.46-4.34 1.39-.47 1 .73c.01.11.02.22.02.34 0 1.99-.73 3.81-1.94 5.21z" />
+            </symbol>
+
+            <symbol id="icon-megaphone" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h4v5l4-2 4 2v-5h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM8 13H5V6h3v7zm4 0H9V6h3v7zm4 0h-3V6h3v7zm4 0h-3V6h3v7z" />
+            </symbol>
+
+            <symbol id="icon-users" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+            </symbol>
+
+            <symbol id="icon-chart" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-5h7v5zm5-7h-7V5h7v5z" />
+            </symbol>
+
+            <symbol id="icon-calendar" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5z" />
+            </symbol>
+
+            <symbol id="icon-document" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11zM8 15h8v2H8zm0-4h8v2H8zm0-4h5v2H8z" />
+            </symbol>
+
+            <symbol id="icon-computer" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z" />
+            </symbol>
+
+            <symbol id="icon-book" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z" />
+            </symbol>
+        </defs>
+    </svg>
+
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-container">
+
+                <svg class="logo-svg" viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+
+                        <linearGradient id="redGrad" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#ff3b1f" />
+                            <stop offset="100%" stop-color="#b30000" />
+                        </linearGradient>
+                        <linearGradient id="darkGrad" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#3a3f42" />
+                            <stop offset="100%" stop-color="#0f1417" />
+                        </linearGradient>
+                    </defs>
+
+                    <rect x="115" y="15" width="70" height="70" transform="rotate(45 150 50)" fill="url(#redGrad)" />
+
+                    <rect x="55" y="95" width="70" height="70" transform="rotate(45 90 130)" fill="url(#darkGrad)" />
+
+                    <rect x="175" y="95" width="70" height="70" transform="rotate(45 210 130)" fill="url(#darkGrad)" />
+                </svg>
+
+
+                <div class="logo-text">
+                    <h1 class="logo">Новости <span class="logo-accent">КРЭТ</span></h1>
+                    <p class="subtitle">Корпоративный портал сотрудников</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <section class="hero" id="heroBlock">
+        <div class="hero-content">
+            <h2 class="hero-title">Корпоративные новости</h2>
+            <p class="hero-description">Актуальная информация для сотрудников КРЭТ</p>
+            <div class="hero-meta">
+                <span class="hero-meta-item">Обновлено: <strong id="lastUpdate">28 января 2026</strong></span>
+                <span class="hero-meta-dot">·</span>
+                <span class="hero-meta-item"><strong id="newsCount">10</strong> новостей</span>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="main-content">
+
+            <nav class="breadcrumb">
+                <span class="breadcrumb-link" id="backToList" style="display: none;">← Все новости</span>
+            </nav>
+
+            <div id="listView" class="list-view">
+
+                <div class="toolbar">
+                    <div class="search-box">
+                        <span class="search-icon">
+                            <svg>
+                                <use href="#icon-search" />
+                            </svg>
+                        </span>
+                        <input type="text" class="search-input" id="searchInput" placeholder="Поиск по новостям..."
+                            aria-label="Поиск по новостям">
+                    </div>
+                    <div class="filters">
+                        <select class="filter-select" id="categoryFilter" aria-label="Фильтр по категории">
+                            <option value="all">Все категории</option>
+                            <option value="important">Важно</option>
+                            <option value="sport">Спорт</option>
+                            <option value="announcement">Объявления</option>
+                            <option value="hr">HR / Персонал</option>
+                            <option value="results">Итоги</option>
+                            <option value="event">Мероприятия</option>
+                        </select>
+                        <select class="filter-select" id="sortOrder" aria-label="Сортировка">
+                            <option value="desc">Сначала новые</option>
+                            <option value="asc">Сначала старые</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="news-container">
+                    <div class="news-list" id="newsList"></div>
+                </div>
+            </div>
+
+            <div id="detailView" class="detail-view"></div>
+        </div>
+
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Быстрые ссылки</h3>
+                <ul class="sidebar-list">
+                    <li>
+                        <a href="#" class="sidebar-link">
+                            <svg>
+                                <use href="#icon-users" />
+                            </svg>
+                            <span>HR отдел</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="sidebar-link">
+                            <svg>
+                                <use href="#icon-computer" />
+                            </svg>
+                            <span>IT поддержка</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="sidebar-link">
+                            <svg>
+                                <use href="#icon-soccer" />
+                            </svg>
+                            <span>Спортивные мероприятия</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="sidebar-link">
+                            <svg>
+                                <use href="#icon-book" />
+                            </svg>
+                            <span>Корпоративное обучение</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Контакты портала</h3>
+                <div class="sidebar-info">
+                    По вопросам размещения новостей:
+                    <strong>pr@kret.ru</strong>
+
+                    Техническая поддержка:
+                    <strong>доб. 1234</strong>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Ближайшие события</h3>
+                <ul class="sidebar-list">
+                    <li style="border: none; padding: calc(var(--spacing-unit) * 1) 0;">
+                        <div style="font-size: 13px; color: var(--color-text-secondary);">5 февраля</div>
+                        <div style="font-size: 14px; margin-top: 4px;">Закрытие заявок на турнир</div>
+                    </li>
+                    <li style="border: none; padding: calc(var(--spacing-unit) * 1) 0;">
+                        <div style="font-size: 13px; color: var(--color-text-secondary);">15 февраля</div>
+                        <div style="font-size: 14px; margin-top: 4px;">Дедлайн конкурса «Лидеры»</div>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <div>
+                    <h4 class="footer-section-title">Ресурсы</h4>
+                    <ul class="footer-list">
+                        <li><a href="#" class="footer-link">База знаний</a></li>
+                        <li><a href="#" class="footer-link">Документы</a></li>
+                        <li><a href="#" class="footer-link">Регламенты</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-section-title">Поддержка</h4>
+                    <ul class="footer-list">
+                        <li><a href="#" class="footer-link">Обратная связь</a></li>
+                        <li><a href="#" class="footer-link">Техподдержка</a></li>
+                        <li><a href="#" class="footer-link">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-section-title">О компании</h4>
+                    <ul class="footer-list">
+                        <li><a href="#" class="footer-link">Структура</a></li>
+                        <li><a href="#" class="footer-link">Карьера</a></li>
+                        <li><a href="#" class="footer-link">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2026 КРЭТ. Внутренний корпоративный портал
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
